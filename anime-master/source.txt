@@ -1,0 +1,5 @@
+Documentation:
+https://animejs.com/documentation/
+
+20 Anime JS Examples:
+https://freefrontend.com/anime-js-examples/
