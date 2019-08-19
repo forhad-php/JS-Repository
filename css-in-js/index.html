@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS in JS</title>
+</head>
+<body>
+    <p id="target">rainbow 🌈</p>
+
+    <script>
+        /**
+         * According to → https://dev.to/karataev/set-css-styles-with-javascript-3nl5
+         * Inline styles ←
+         */
+        // document.getElementById('target').style.color = 'tomato';
+
+        // Global styles ←
+        /* var style = document.createElement('style');
+        style.innerHTML = `
+        #target {
+        color: blueviolet;
+        }
+        `;
+        document.head.appendChild(style); */
+
+        // CSSOM insertRule ←
+        /* var style = document.createElement('style');
+        document.head.appendChild(style);
+        style.sheet.insertRule('#target {color: darkseagreen}'); */
+
+        /**
+         * Constructable Stylesheets 2019
+         * It's now possible to create CSSStyleSheet object from JavaScript
+         * First create our shared stylesheet:
+         * Then apply the stylesheet to a document:
+         */
+        const sheet = new CSSStyleSheet();
+        sheet.replaceSync('#target {color: yellow}');
+
+        document.adoptedStyleSheets = [sheet];
+    </script>
+</body>
+</html>
