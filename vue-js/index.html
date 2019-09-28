@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- development version, includes helpful console warnings -->
+    <!-- Source: https://vuejs.org/v2/guide/index.html -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <div id="app">
+
+        <!-- The most basic form of data binding is text interpolation using the “Mustache” syntax (double curly braces): -->
+        <!-- Source: https://vuejs.org/v2/guide/syntax.html#Text -->
+        <p>{{ title }}</p>
+
+        <!-- We can use the v-on directive to listen to DOM events and run some JavaScript when they’re triggered. -->
+        <!-- Source: https://vuejs.org/v2/guide/events.html -->
+        <button v-on:click="title = 'New Title'">Change Title</button>
+
+        <!-- `changeTitle` is the name of a method defined below -->
+        <button v-on:click="changeTitle">Change Title by Method</button>
+
+        <hr>
+
+        <!-- Class and Style Bindings -->
+        <!-- Source: https://vuejs.org/v2/guide/class-and-style.html -->
+        <input type="text" v-on:input="cssClass = $event.target.value">
+        <p v-bind:class="cssClass">Class Name: {{ cssClass }}</p>
+
+    </div>
+
+    <!-- <script src="vue.min.js"></script> -->
+    <script>
+    new Vue({
+            // control an element which have an id named #app
+            el: '#app',
+            // data object
+            data: {
+                title: 'Hello World!',
+                cssClass: ''
+            },
+
+            // define methods under the `methods` object
+            methods: {
+                changeTitle() {
+                    this.title = 'Title Changes by Method';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
