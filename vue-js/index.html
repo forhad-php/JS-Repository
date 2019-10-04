@@ -1,11 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>VueJS 2</title>
+
+    <style>
+    .red {background: red;}
+    .green {background: green;}
+    .blue {background: blue;}
+    .user {
+        border: 1px solid gray;
+        padding: 10px 20px;
+        background: orange;
+        display: inline-block;
+    }
+
+    /* Table Styles */
+    table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    }
+
+    td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    }
+
+    tr:nth-child(even) {
+    background-color: #dddddd;
+    }
+    </style>
 </head>
+
 <body>
 
     <!-- development version, includes helpful console warnings -->
@@ -14,6 +44,13 @@
 
     <div id="app">
 
+        <!-- Quick Steps :
+        1. Set and event
+        2. Set a default value on 'data' object
+        3. And finaly do someting into the method if have -->
+
+        <h3>EVENTS & METHODS</h3>
+        <hr>
         <!-- The most basic form of data binding is text interpolation using the “Mustache” syntax (double curly braces): -->
         <!-- Source: https://vuejs.org/v2/guide/syntax.html#Text -->
         <p>{{ title }}</p>
@@ -25,33 +62,145 @@
         <!-- `changeTitle` is the name of a method defined below -->
         <button v-on:click="changeTitle">Change Title by Method</button>
 
+        <br><br><br><br><br>
+        <h3>BINDING HTML ATTRIBUTES</h3>
         <hr>
 
         <!-- Class and Style Bindings -->
         <!-- Source: https://vuejs.org/v2/guide/class-and-style.html -->
+        <span>Write a color name like <em>red, green, blue</em> to see changes →</span>
         <input type="text" v-on:input="cssClass = $event.target.value">
         <p v-bind:class="cssClass">Class Name: {{ cssClass }}</p>
 
+        <!-- Source: https://v1.vuejs.org/guide/computed.html -->
+        <br><br><br><br><br>
+        <h3>COMPUTED PROPERTIES</h3>
+        <hr>
+        <button v-on:click="increment">Increment</button>
+        <p>Counter: {{ counter }}</p>
+        <p>Clicks: {{ clicks }}</p>
+
+        <!-- Source: https://v1.vuejs.org/guide/conditional.html -->
+        <br><br><br><br><br>
+        <h3>CONDITIONAL</h3>
+        <hr>
+        <button v-on:click="show = !show">Show/Hide</button>
+        <p v-if="show">I'm part time visible!</p>
+        <p v-else>Am I visible?</p>
+
+        <br><br><br><br><br>
+        <h3>Iteration</h3>
+        <hr>
+        <!-- v-for="person in persons" means
+        for (person in persons) {
+            <li>person</li>
+        } -->
+        <ul><li v-for="person in persons">{{ person.name }}</li></ul>
+
+        <br><br><br><br><br>
+        <h3>FILTERS</h3>
+        <h4>{{ title }}</h4>
+        <p>{{ message | uppercase }}</p>
+        <hr>
+
+        <!-- source: https://v1.vuejs.org/guide/components.html -->
+        <br><br><br><br><br>
+        <h3>COMPONENTS</h3>
+        <app-user></app-user>
+        <app-user></app-user>
+        <hr>
+
+        <br><br><br><br><br>
+        <h3>Vue CLI</h3>
+        <table>
+            <tr>
+                <th>Action</th>
+                <th>Command</th>
+            </tr>
+            <tr>
+                <td>To install latest VUE CLI globally</td>
+                <td><code>npm install @vue/cli -g</code></td>
+            </tr>
+            <tr>
+                <td>Check version</td>
+                <td><code>vue --version</code></td>
+            </tr>
+            <tr>
+                <td>Initiate a VUE project</td>
+                <td><code>vue init webpack-simple vue-webpack</code></td>
+            </tr>
+            <tr>
+                <td>Enter the project folder</td>
+                <td><code>cd vue-webpack</code></td>
+            </tr>
+            <tr>
+                <td>Instaling npm for work all dependencies well</td>
+                <td><code>npm istall</code></td>
+            </tr>
+            <tr>
+                <td>Start dev mode</td>
+                <td><code>npm run dev</code></td>
+            </tr>
+        </table>
+        <hr>
     </div>
 
     <!-- <script src="vue.min.js"></script> -->
     <script>
-    new Vue({
-            // control an element which have an id named #app
-            el: '#app',
-            // data object
-            data: {
-                title: 'Hello World!',
-                cssClass: ''
-            },
-
-            // define methods under the `methods` object
-            methods: {
-                changeTitle() {
-                    this.title = 'Title Changes by Method';
-                }
+    // Vue register component
+    Vue.component('app-user', {
+        data: function() {
+            return {
+                users: [{
+                    username: 'Max'
+                }, {
+                    username: 'Chris'
+                }, {
+                    username: 'Anna'
+                }]
             }
-        });
+        },
+        template: '<div><div class="user" v-for="user in users"><p>Username: {{ user.username }}</p></div></div>'
+    });
+
+    // Vue init
+    new Vue({
+        // control an element which have an id named #app
+        el: '#app',
+        // data object
+        data: {
+            title: 'Hello!',
+            message: 'Lorem ipsum dolor amit.',
+            cssClass: '',
+
+            counter: 0,
+            clicks: 0,
+
+            show: true,
+            persons: [
+                {name: 'Max', age: 27},
+                {name: 'Chris', age: 30},
+                {name: 'Lora', age: 25}
+            ]
+        },
+        // define methods under the `methods` object
+        methods: {
+            changeTitle() {
+                this.title = 'Title Changes by Method';
+            },
+            increment() {
+                this.counter = this.counter + 2;
+                this.clicks++;
+            }
+        },
+        // define filters under the `methods` object
+        filters: {
+            uppercase: function(value) {
+                return value.toUpperCase();
+            }
+        }
+    });
     </script>
 </body>
+
 </html>
