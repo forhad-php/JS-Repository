@@ -130,3 +130,20 @@ class App extends React.Component {
 }
 export default App;
 ```
+
+## Part 2 [AppRouter component](https://mrinalbd.com/approuter-setup-with-react-graphql-wordpress-app/)
+
+#### :point_right: In this part, we will build `src/AppRouter.js`.
+- We will use **{ BrowserRouter, Route, Switch }** from **react-router-dom**.
+- use **ApolloClient** and **{gql}** from **apollo-boost** package to connect **React** with **Apollo**.
+- And import **milligram CSS** & **App** component here. 
+- Also, **Post** and **NotFound** component import here from respective files.
+```JS
+import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import ApolloClient, { gql } from "apollo-boost";
+import "milligram";
+import App from './App';
+import Post from './components/Post';
+import NotFound from './components/NotFound';
+```
