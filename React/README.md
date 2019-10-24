@@ -50,7 +50,10 @@ class AppRouter extends React.Component {
 export default AppRouter;
 ```
 
-#### :point_right: Open src/index.js, it application start. Remove index.css in App importer. At last, use AppRouter in ReactDom. So the fiinal code at src/inde.js like,
+#### :point_right: Open src/index.js, it application start. 
+- Remove **index.css** and **App.js** in App importer.
+- Also delete the **src/App.js** file
+- At last, use **AppRouter** in **ReactDom**. So the fiinal code at **src/inde.js** like,
 ```JS
 import React from "react";
 import ReactDOM from "react-dom";
@@ -70,7 +73,7 @@ serviceWorker.unregister();
 - For this Application, we will take advantage of **ES6** and **JSX**. 
 -  Besides these packages, we will also use five custom components.
 
-#### :point_right:  Delete src/App.js. Create a folder component. 
+#### :point_right: Create a folder component. 
 - In this folder, create **App.js**, **Posts.js**, **PostWidget.js**, **Post.js**, **NotFound.js**. 
 - Here, just declare a component class for now.
 
