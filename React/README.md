@@ -37,7 +37,20 @@
 - [ ] Post
 - [ ] NotFound
 
-#### :point_right: Open src/index.js, because it application start. Remove index.css in App importer. At last, use AppRouter in ReactDom. So the fiinal code at src/inde.js like,
+#### :point_right: First, create a file in `/src` named `AppRouter.js`. Be sure about the naming convention. React follow camel casing for both filename and class name.
+**Open `src/AppRouter.js`. We know, for every react component we have to import React from react package. For the first sight, we will define AppRouter in this file.**
+
+```JS
+import React from "react";
+class AppRouter extends React.Component {
+  render() {
+    return <div>Router</div>;
+  }
+}
+export default AppRouter;
+```
+
+#### :point_right: Open src/index.js, it application start. Remove index.css in App importer. At last, use AppRouter in ReactDom. So the fiinal code at src/inde.js like,
 ```JS
 import React from "react";
 import ReactDOM from "react-dom";
