@@ -18,7 +18,8 @@
 1. https://www.npmjs.com/package/apollo-boost
 2. https://www.npmjs.com/package/react-apollo
 3. https://www.npmjs.com/package/graphql
-Also we need more cuple of think,
+
+**Also we need more cuple of think,**
 + https://milligram.io/ for quick style
 + https://www.styled-components.com/
 + https://reacttraining.com/react-router/web/guides/quick-start for pagination system
