@@ -64,8 +64,8 @@ serviceWorker.unregister();
 ```
 
 #### :point_right: AppRouter component is defined as App, Post, and NotFound.
-#### :point_right: The app is mixed up with Posts and PostWidget. 
-#### :point_right: Posts and a PostWidget components will use in the App component, 
+**The app is mixed up with Posts and PostWidget.**
+**Posts and a PostWidget components will use in the App component**
 #### :point_right: Post component for a single post and NotFound component for the wrong URL enter our application. 
 #### :point_right: For this Application, we will take advantage of ES6 and JSX. 
 #### :point_right:  Besides these packages, we will also use five custom components.
@@ -73,7 +73,7 @@ serviceWorker.unregister();
 #### :point_right: In this folder, create App.js, Posts.js, PostWidget.js, Post.js, NotFound.js. 
 #### :point_right: Here, just declare a component class for now.
 
-Open src/components/App.js and write the following code.
+#### :point_right: Open src/components/App.js and write the following code.
 
 ```JS
 import React from "react";
