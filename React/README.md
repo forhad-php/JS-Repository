@@ -88,3 +88,45 @@ class App extends React.Component {
 }
 export default App;
 ```
+#### :point_right: Open src/Posts.js and write the following code.
+
+```JS
+import React from "react";
+class Posts extends React.Component {
+  render() {
+    return <div>Post Archive</div>;
+  }
+}
+export default Posts;
+```
+#### :point_right: Open src/components/Post.js and write the following code.
+
+```JS
+import React from "react";
+class Post extends React.Component {
+  render() {
+    return <div>Single Post</div>;
+  }
+}
+export default Post;
+```
+#### :point_right: Open src/components/PostWidget.js and write the following code.
+```JS
+import React from "react";
+class PostWidget extends React.Component {
+  render() {
+    return <div>Post Widget</div>;
+  }
+}
+export default PostWidget;
+```
+#### :point_right: Open src/components/NotFound.js and write the following code.
+```JS
+import React from "react";
+class App extends React.Component {
+  render() {
+    return <div>App</div>;
+  }
+}
+export default App;
+```
