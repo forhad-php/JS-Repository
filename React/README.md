@@ -1,12 +1,11 @@
 # apollographql
-# Source 1 → https://mrinalbd.com/setup-for-react-front-end/
+## Source 1 → https://mrinalbd.com/setup-for-react-front-end/
 
-### :point_right: First clone the graphql in your plugin folder 
-https://github.com/wp-graphql/wp-graphql
+#### :point_right: First clone the graphql in your plugin folder from https://github.com/wp-graphql/wp-graphql
 
-### After activate the plugin, visit http://localhost/wordpress/?graphql
+#### :point_right: After activate the plugin, visit http://localhost/wordpress/?graphql
 
-### If it show a page of error, then confirmed wp-graphql plugin works.
+### :point_right: If it show a page of error, then confirmed wp-graphql plugin works.
 
 ### Let's create a brand new react app by the command
 `npx create-react-app apollographql`
