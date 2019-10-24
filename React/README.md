@@ -1,5 +1,5 @@
 # apollographql
-## Source 1 → https://mrinalbd.com/setup-for-react-front-end/
+## Part 1: [Setup](https://mrinalbd.com/setup-for-react-front-end/)
 
 #### :point_right: First clone the graphql in your plugin folder from https://github.com/wp-graphql/wp-graphql
 
