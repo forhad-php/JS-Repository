@@ -63,10 +63,10 @@ ReactDOM.render(<AppRouter />, document.getElementById("root"));
 serviceWorker.unregister();
 ```
 
-> AppRouter component is defined as App, Post, and NotFound.
-> The app is mixed up with Posts and PostWidget.
-> Posts and a PostWidget components will use in the App component
-#### :point_right: Post component for a single post and NotFound component for the wrong URL enter our application. 
+- AppRouter component is defined as App, Post, and NotFound.
+- The app is mixed up with Posts and PostWidget.
+- Posts and a PostWidget components will use in the App component
+- Post component for a single post and NotFound component for the wrong URL enter our application. 
 #### :point_right: For this Application, we will take advantage of ES6 and JSX. 
 #### :point_right:  Besides these packages, we will also use five custom components.
 #### :point_right:  Delete src/App.js. Create a folder component. 
