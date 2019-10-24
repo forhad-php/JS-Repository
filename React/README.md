@@ -21,7 +21,7 @@
 
 **Also we need more cuple of think,**
 + https://milligram.io/ for quick style
-+ https://www.styled-components.com/
++ https://www.styled-components.com/ styling components
 + https://reacttraining.com/react-router/web/guides/quick-start for pagination system
 + https://github.com/cure53/DOMPurify for safe DOM rander in React app
 
