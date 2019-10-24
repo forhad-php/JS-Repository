@@ -12,10 +12,10 @@ https://github.com/wp-graphql/wp-graphql
 `npx create-react-app apollographql`
 > Note: npx is a npm package runner. The typical use is to download and run a package temporarily or for trials.
 
-- go to project folder and start this app
+- [ ] go to project folder and start this app
 `cd apollographql && npm start`
 
-- We need to install three packages to use graphQL in React. Apollo makes possible to write a query in graphQL.
+- [ ] We need to install three packages to use graphQL in React. Apollo makes possible to write a query in graphQL.
 1. https://www.npmjs.com/package/apollo-boost
 2. https://www.npmjs.com/package/react-apollo
 3. https://www.npmjs.com/package/graphql
@@ -29,7 +29,7 @@ Install these packages with the command -
 `npm i apollo-boost react-apollo graphql react-router-dom milligram styled-components dompurify`
 Note: By default, these packages install for development only. Here, `i` is the shorthand for `install` command. 
 
-We will create some components. These are:
+- [ ] We will create some components. These are:
 AppRouter
 App
 Posts
