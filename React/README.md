@@ -1,7 +1,7 @@
 # apollographql
 # Source 1 → https://mrinalbd.com/setup-for-react-front-end/
 
-### First clone the graphql in your plugin folder 
+### :point_right: First clone the graphql in your plugin folder 
 https://github.com/wp-graphql/wp-graphql
 
 ### After activate the plugin, visit http://localhost/wordpress/?graphql
