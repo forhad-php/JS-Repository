@@ -244,7 +244,7 @@ class AppRouter extends React.Component {
   };
   componentDidMount() {
     const client = new ApolloClient({
-      uri: "https://mrinalbd.com/?graphql"
+      uri: "http://localhost/wordpress/?graphql"
     });
     client
       .query({
