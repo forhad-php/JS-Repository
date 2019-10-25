@@ -52,7 +52,7 @@ export default AppRouter;
 
 #### :point_right: Open src/index.js, it application start. 
 - Remove **index.css** and **App.js** in App importer.
-- Also delete the **src/App.js** file
+- Also delete the files **src/index.css** and **src/App.js**
 - At last, use **AppRouter** in **ReactDom**. So the fiinal code at **src/inde.js** like,
 ```JS
 import React from "react";
