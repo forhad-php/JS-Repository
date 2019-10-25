@@ -147,3 +147,48 @@ import App from './App';
 import Post from './components/Post';
 import NotFound from './components/NotFound';
 ```
+#### :point_right: Use react-router-dom’s { BrowserRouter, Route, Switch } components here.
+```JS
+render() {
+    return (
+      <div className="container">
+        <BrowserRouter>
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={props => <App {...props} state={this.state.posts} />}
+            />
+            <Route
+              path="/post/:postID"
+              render={props => <Post {...props} state={this.state.posts} />}
+            />
+            <Route component={NotFound} />
+          </Switch>
+        </BrowserRouter>
+      </div>
+    );
+  }
+```
+#### :point_right: Here, the mechanism of Switch is like that,
+- When URL is root BrowserRouter render App component.
+- If URL is going to single post BrowserRouter render Post component. Here `:postID` placeholder will be changed with real post id. Here, we render Post component with parent props and state.
+- If any user goes to another URL, BrowserRouter renders NotFound component.
+
+#### :point_right: In AppRouter class, the state is defined here. We can store data in state and use this state in a different component.
+```JS
+state = {
+  posts: []
+},
+```
+
+#### :point_right: At this point, we will use the componentDidMount life cycle. This life cycle is hooked when component mounted.
+- Here, we will use an instance of ApolloClient class. ApolloClient class needs URI which is http://localhost/wordpress/?graphql .
+
+```JS
+componentDidMount() {
+  const client = new ApolloClient({
+    uri: 'https://mrinalbd.com/?graphql'
+  });
+}
+```
