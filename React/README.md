@@ -192,3 +192,97 @@ componentDidMount() {
   });
 }
 ```
+
+#### :point_right:  After a defined client, we will run graphql query and then set posts in state. Let’s start dig in the mud. Plan for now –
+- **Step 1:** ApolloClient’s instance client has a query method. In this query, we can use gql (graphql) which we imported at the start of this file.
+- **Step 2:** If this query successful then run a function. In this function, we will write a command to store these data
+
+Second, write the codes.
+```JS
+client
+    .query({
+      query: gql`
+        {
+          generalSettings {
+              title
+            }
+          posts {
+            edges {
+              node {
+                id
+                title
+                date
+                link
+                content
+                excerpt
+              }
+            }
+          }
+        }
+      `
+    })
+    .then(result => {
+      this.setState({ posts: result.data.posts.edges });
+    });
+```
+
+- It is long code (for me). So break it down.
+- First, we run a query to fetch data. This query is from official documentation of wpgraphql. **https://docs.wpgraphql.com/getting-started/posts.**
+- Second, run the promise of the client. In this method, we write an array function where result is a parameter. This function command to state, let’s update. setState is the recommended method to update state. And in this method update posts by post’s data, which we get from the previous query.
+- So, Final code of **src/AppRouter.js**
+
+```JS
+import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import ApolloClient, { gql } from "apollo-boost";
+import App from "../App";
+import Post from "./Post";
+import NotFound from "./NotFound";
+class AppRouter extends React.Component {
+  state = {
+    posts: []
+  };
+  componentDidMount() {
+    const client = new ApolloClient({
+      uri: "https://mrinalbd.com/?graphql"
+    });
+    client
+      .query({
+        query: gql`
+          {
+            posts {
+              edges {
+                node {
+                  id
+                  title
+                  date
+                  link
+                  content
+                  excerpt
+                }
+              }
+            }
+          }
+        `
+      })
+      .then(result => {
+        this.setState({ posts: result.data.posts.edges });
+      });
+  }
+  render() {
+    return (
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" render={props => <App {...props} state={this.state.posts} />} />
+          <Route
+            path="/post/:postID"
+            render={props => <Post {...props} state={this.state.posts} />}
+          />
+          <Route component={NotFound} />
+        </Switch>
+      </BrowserRouter>
+    );
+  }
+}
+export default AppRouter;
+```
