@@ -143,12 +143,18 @@ class NotFound extends React.Component {
 export default NotFound;
 ```
 
-AppRouter component is defined as App, Post, and NotFound.
+- তাহলে `src/AppRouter.js ` এর ভিতরে থাকল `App`, `Post`, এবং `NotFound.`
+```JS
+import App from './components/App';
+import Post from './components/Post';
+import NotFound from './components/NotFound';
+```
 
-The app is mixed up with Posts and PostWidget.
-Posts and a PostWidget components will use in the App component
+- `App.js` এর ভিতরে থাকল `Posts` এবং `PostWidget`
+```JS
+import Posts from "./components/Posts";
+import PostWidget from "./components/PostWidget";
+```
 
-Post component for a single post and NotFound component for the wrong URL enter our application.
+> `Post` কম্পনেন্টটা কাজ করবে সিঙ্গেল পোস্টের জন্য এবং `NotFound` কম্পনেন্ট কাজ করবে wrong URL ধরার জন্য।
 
-For this Application, we will take advantage of ES6 and JSX.
-Besides these packages, we will also use five custom components.
