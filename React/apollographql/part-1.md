@@ -1,8 +1,8 @@
-প্রথমেই `https://github.com/wp-graphql/wp-graphql` রিপোজিটোরি টি আমাদের ওয়ার্ডপ্রেস সাইটে ক্লোন করে নেই। wp-graphql হচ্ছে, যেকোন ওয়ার্ডপ্রেস থেকে GraphQL schema এবং API প্রদানকারী একটা প্লাগিন।
+:eleven: প্রথমেই `https://github.com/wp-graphql/wp-graphql` রিপোজিটোরি টি আমাদের ওয়ার্ডপ্রেস সাইটে ক্লোন করে নেই। wp-graphql হচ্ছে, যেকোন ওয়ার্ডপ্রেস থেকে GraphQL schema এবং API প্রদানকারী একটা প্লাগিন।
 প্লাগিনটি একটিভ করার পর আমি যদি আমার ওয়ার্ডপ্রেস সাইটে ভিজিট করি এইভাবে `http://localhost/wordpress/?graphql` এবং যদি দেখি এরকম
 ```{"errors":[{"message":"GraphQL Request must include at least one of those two parameters: \"query\" or \"queryId\"","category":"request"}]}```
 
-একটা ইরর মেসেজ, তাহলে বুঝব প্লাগিনটি কাজ করেছে।
+:two: একটা ইরর মেসেজ, তাহলে বুঝব প্লাগিনটি কাজ করেছে।
 
 এবার আমারা ওয়ার্ডপ্রেস থেকে বেরিয়ে আসব।
 
