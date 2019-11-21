@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Autocomplete functionality on a textarea.</title>
+
+    <!-- http://imankulov.github.io/asuggest/ -->
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="jquery.a-tools-1.4.1.js"></script>
+    <script src="jquery.asuggest.js"></script>
+</head>
+<body>
+
+    <textarea name="" id="area1" cols="30" rows="10"></textarea>
+
+    <script>
+    var suggests = [
+        "head",
+        "hello",
+        "heart",
+        "health",
+        "horizontal",
+        "horizont",
+        "hormonotherapy",
+        "I have had this problem for a long time, and its bothering me.",
+        "I have had another problem.",
+        "I have had a car."
+        ];
+        $("#area1").asuggest(suggests, {
+            // 'endingSymbols': ', ',
+            'stopSuggestionKeys': [$.asuggestKeys.RETURN],
+            'minChunkSize': 1,
+            'delimiters': '\n'
+        });
+    </script>
+</body>
+</html>
