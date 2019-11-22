@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+      function HelloWorld( props ) {
+
+        return (
+          <div>
+            <h1>Hello World!</h1>
+            <p>Lorem ipsum dolor sit amet.</p>  
+            <em>{props.name}</em>
+          </div>
+        );
+      }
+
+      class MyName extends React.Component {
+        render() {
+          return (
+              <h1>My name is Forhad.</h1>
+          );
+        }
+      }
+
+      // Components
+      // Props
+
+      /* ReactDOM.render(
+         <h1>Hello, world!</h1>,
+         document.getElementById('root')
+      ); */
+
+      ReactDOM.render(
+        <div>
+          <HelloWorld name="React" />
+          <MyName />
+        </div>,
+        document.getElementById('root')
+      );
+
+    </script>
+  </body>
+</html>
